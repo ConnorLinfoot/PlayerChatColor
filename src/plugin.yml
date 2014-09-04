@@ -1,0 +1,10 @@
+name: PlayerChatColor
+description: PlayerChatColor
+main: com.connorlinfoot.playerchatcolor.Main
+version: 1.0
+commands:
+  chatcolor:
+    description: Change your Chat Color
+permissions:
+  chatcolor.use:
+    default: false
