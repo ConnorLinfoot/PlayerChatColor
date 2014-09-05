@@ -33,7 +33,7 @@ public class Main extends JavaPlugin implements Listener {
         ConsoleCommandSender console = server.getConsoleSender();
 
         console.sendMessage(ChatColor.GREEN + "========= PlayerChatColor! =========");
-        console.sendMessage(ChatColor.GREEN + "=========== VERSION: 1.1 ===========");
+        console.sendMessage(ChatColor.GREEN + "========== VERSION: 1.1.1 ==========");
         console.sendMessage(ChatColor.GREEN + "======== BY CONNOR LINFOOT! ========");
     }
 
@@ -88,21 +88,26 @@ public class Main extends JavaPlugin implements Listener {
 
             if( args[0].equalsIgnoreCase("list") ){
                 // List of all colors
-                sender.sendMessage(Prefix + "===== ChatColor List =====");
-                sender.sendMessage(Prefix + ChatColor.WHITE + "- white");
-                sender.sendMessage(Prefix + ChatColor.GREEN + "- green");
-                sender.sendMessage(Prefix + ChatColor.AQUA + "- aqua");
-                sender.sendMessage(Prefix + ChatColor.RED + "- red");
-                sender.sendMessage(Prefix + ChatColor.BLUE + "- blue");
-                sender.sendMessage(Prefix + ChatColor.GOLD + "- gold");
-                sender.sendMessage(Prefix + ChatColor.YELLOW + "- yellow");
-                sender.sendMessage(Prefix + ChatColor.LIGHT_PURPLE + "- purple");
-                sender.sendMessage(Prefix + "More coming soon");
+                sender.sendMessage(Prefix + "Supported Colors: "
+                    + ChatColor.WHITE + "white"
+                    + ChatColor.WHITE + ", " + ChatColor.BLACK + "black"
+                    + ChatColor.WHITE + ", " + ChatColor.GREEN + "green"
+                    + ChatColor.WHITE + ", " + ChatColor.AQUA + "aqua"
+                    + ChatColor.WHITE + ", " + ChatColor.RED + "red"
+                    + ChatColor.WHITE + ", " + ChatColor.BLUE + "blue"
+                    + ChatColor.WHITE + ", " + ChatColor.DARK_BLUE + "dark_blue"
+                    + ChatColor.WHITE + ", " + ChatColor.GOLD + "gold"
+                    + ChatColor.WHITE + ", " + ChatColor.YELLOW + "yellow"
+                    + ChatColor.WHITE + ", " + ChatColor.LIGHT_PURPLE + "purple");
                 return true;
             }
 
             if( args[0].equalsIgnoreCase("white") ){
                 setPlayerChatColor(p, ChatColor.WHITE);
+                sender.sendMessage(Prefix + "ChatColor has been updated");
+                return true;
+            } else if( args[0].equalsIgnoreCase("black") ){
+                setPlayerChatColor(p, ChatColor.BLACK);
                 sender.sendMessage(Prefix + "ChatColor has been updated");
                 return true;
             } else if( args[0].equalsIgnoreCase("green") ){
@@ -121,6 +126,10 @@ public class Main extends JavaPlugin implements Listener {
                 setPlayerChatColor(p, ChatColor.BLUE);
                 sender.sendMessage(Prefix + "ChatColor has been updated");
                 return true;
+            } else if( args[0].equalsIgnoreCase("dark_blue") ){
+                setPlayerChatColor(p, ChatColor.DARK_BLUE);
+                sender.sendMessage(Prefix + "ChatColor has been updated");
+                return true;
             } else if( args[0].equalsIgnoreCase("gold") ){
                 setPlayerChatColor(p, ChatColor.GOLD);
                 sender.sendMessage(Prefix + "ChatColor has been updated");
@@ -137,7 +146,7 @@ public class Main extends JavaPlugin implements Listener {
 
         }
 
-        sender.sendMessage(Prefix + ChatColor.RED + "Usage: /chatcolor [player] <color/list>");
+        sender.sendMessage(Prefix + ChatColor.RED + "Usage: /chatcolor <color/list>");
         return true;
     }
 
